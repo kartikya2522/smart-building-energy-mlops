@@ -29,8 +29,13 @@ from pathlib import Path
 
 # Load feature names from JSON file
 feature_names_path = Path(__file__).parent / "models" / "feature_names.json"
-with open(feature_names_path, "r") as f:
-    FEATURE_NAMES = json.load(f)
+try:
+    with open(feature_names_path, "r") as f:
+        FEATURE_NAMES = json.load(f)
+except FileNotFoundError:
+    st.error(f"Error: Feature names file not found at {feature_names_path}")
+    st.info("Please ensure models/feature_names.json is in the repository")
+    st.stop()
 
 # Page configuration
 st.set_page_config(
