@@ -1,9 +1,22 @@
 __pycache__/
 *.pyc
 .env
+
+# MLflow
 mlruns/
 experiments/
-models/
+mlflow.db
+
+# Ignore trained model artifacts ONLY (root-level)
+ /models/*.pkl
+ /models/*.joblib
+
+# Ignore processed data
 data/processed/
+
+# Jupyter
 .ipynb_checkpoints/
+
+# OS / Editor
 .DS_Store
+.vscode/
