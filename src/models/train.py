@@ -16,6 +16,7 @@ Date: 2025
 
 import os
 import sys
+from flask import json
 import numpy as np
 import pandas as pd
 from pathlib import Path
@@ -71,6 +72,14 @@ def load_and_engineer_features(data_path):
     print("="*70)
     
     X, y = build_features(str(data_path))
+
+    # Save feature names for inference
+    feature_names = list(X.columns)
+
+    import json
+    with open("models/feature_names.json", "w") as f:
+        json.dump(feature_names, f)
+
     
     print(f"\n✓ Feature engineering complete!")
     print(f"  - Features (X): {X.shape}")

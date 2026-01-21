@@ -7,10 +7,7 @@ mlruns/
 experiments/
 mlflow.db
 
-# Note: Models are NOT ignored - they need to be in the repo for deployment
-# The production Ridge model is committed for Streamlit Cloud compatibility
-
-# Ignore processed data
+# Processed data
 data/processed/
 
 # Jupyter
@@ -19,3 +16,4 @@ data/processed/
 # OS / Editor
 .DS_Store
 .vscode/
+.cursor/
