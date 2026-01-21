@@ -7,9 +7,8 @@ mlruns/
 experiments/
 mlflow.db
 
-# Ignore trained model artifacts ONLY (root-level)
- /models/*.pkl
- /models/*.joblib
+# Note: Models are NOT ignored - they need to be in the repo for deployment
+# The production Ridge model is committed for Streamlit Cloud compatibility
 
 # Ignore processed data
 data/processed/
