@@ -19,10 +19,6 @@ Author: ML Pipeline
 Date: 2025
 """
 import json
-
-with open("models/feature_names.json", "r") as f:
-    FEATURE_NAMES = json.load(f)
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -30,6 +26,11 @@ import joblib
 import plotly.graph_objects as go
 import plotly.express as px
 from pathlib import Path
+
+# Load feature names from JSON file
+feature_names_path = Path(__file__).parent / "models" / "feature_names.json"
+with open(feature_names_path, "r") as f:
+    FEATURE_NAMES = json.load(f)
 
 # Page configuration
 st.set_page_config(
