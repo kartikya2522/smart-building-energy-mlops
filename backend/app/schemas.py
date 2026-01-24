@@ -95,7 +95,7 @@ class PredictResponse(BaseModel):
     )
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "energy_wh": 45.3,
                 "cost_inr": 0.226,
@@ -121,7 +121,7 @@ class InsightsResponse(BaseModel):
     )
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "top_drivers": ["RH_6", "Visibility", "Tdewpoint"],
                 "descriptions": [
@@ -154,7 +154,7 @@ class StatsResponse(BaseModel):
     )
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "model_type": "Ridge Regression (α=1.0)",
                 "features_used": ["RH_6", "Windspeed", "Visibility", "Tdewpoint", "rv1", "hour", "hour_sin", "hour_cos"],
