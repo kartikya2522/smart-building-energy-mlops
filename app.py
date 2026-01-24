@@ -92,14 +92,14 @@ def load_model():
     model_path = Path(__file__).parent / "models" / "ridge_model.pkl"
     
     if not model_path.exists():
-        st.error(f"❌ Model file not found at: {model_path}")
+        st.error(f"Model file not found at: {model_path}")
         st.stop()
     
     try:
         model = joblib.load(model_path)
         return model
     except Exception as e:
-        st.error(f"❌ Error loading model: {str(e)}")
+        st.error(f"Error loading model: {str(e)}")
         st.stop()
 
 
@@ -402,7 +402,7 @@ def main():
     # Header
     st.markdown("""
         <div class="header-container">
-            <h1>⚡ Smart Building Energy Prediction</h1>
+            <h1>Smart Building Energy Prediction</h1>
             <p style="color: #666; font-size: 16px;">
                 Predict energy consumption and sustainability impact using AI
             </p>
@@ -415,7 +415,7 @@ def main():
     # ========================================================================
     # SIDEBAR: Input Controls
     # ========================================================================
-    st.sidebar.header("📊 Input Parameters")
+    st.sidebar.header("Input Parameters")
     st.sidebar.markdown("---")
     
     # RH_6 input (Relative Humidity at 6 PM)
@@ -517,7 +517,7 @@ def main():
     # ========================================================================
     # SECTION 1: KPI Metrics
     # ========================================================================
-    st.header("📈 Prediction Results")
+    st.header("Prediction Results")
     
     # Create three columns for metrics
     col1, col2, col3 = st.columns(3)
@@ -551,7 +551,7 @@ def main():
     # ========================================================================
     # SECTION 2: Interactive Visualizations
     # ========================================================================
-    st.header("📊 Visualizations")
+    st.header("Visualizations")
     
     # Create two columns for visualizations
     col1, col2 = st.columns([2, 1])
@@ -574,7 +574,7 @@ def main():
     # ========================================================================
     # SECTION 3: Input Summary
     # ========================================================================
-    st.header("🔍 Current Input Summary")
+    st.header("Current Input Summary")
     
     col1, col2 = st.columns(2)
     
@@ -599,7 +599,7 @@ def main():
     # ========================================================================
     # SECTION 4: Sustainability Impact
     # ========================================================================
-    st.header("🌍 Sustainability Impact")
+    st.header("Sustainability Impact")
     
     st.markdown("""
         <div class="sustainability-section">

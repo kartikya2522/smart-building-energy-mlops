@@ -394,7 +394,7 @@ def generate_textual_insights(importance_df, metrics, feature_names):
     for idx, row in top_positive.iterrows():
         feature = row['Feature']
         coef = row['Coefficient']
-        print(f"\n📈 {feature} (coefficient: {coef:.4f})")
+        print(f"\n{feature} (coefficient: {coef:.4f})")
         
         # Provide contextual interpretation
         if 'temp' in feature.lower() or 'temperature' in feature.lower():
@@ -416,7 +416,7 @@ def generate_textual_insights(importance_df, metrics, feature_names):
         for idx, row in top_negative.iterrows():
             feature = row['Feature']
             coef = row['Coefficient']
-            print(f"\n📉 {feature} (coefficient: {coef:.4f})")
+            print(f"\n{feature} (coefficient: {coef:.4f})")
             
             # Provide contextual interpretation
             if 'temp' in feature.lower() or 'temperature' in feature.lower():

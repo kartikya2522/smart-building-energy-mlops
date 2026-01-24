@@ -421,7 +421,7 @@ def main():
     print("TRAINING PIPELINE SUMMARY")
     print("="*70)
     
-    print("\n📊 RESULTS COMPARISON:")
+    print("\nRESULTS COMPARISON:")
     print("-" * 70)
     print(f"{'Metric':<20} {'Linear Regression':<20} {'Ridge (α={:.1f})':<20}".format(alpha_ridge))
     print("-" * 70)
