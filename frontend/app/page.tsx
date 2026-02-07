@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import HeroEarth from '../components/HeroEarth';
 
 export default function Home() {
   const fadeInUp = {
@@ -28,106 +29,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="min-h-screen bg-black flex items-center justify-center px-4 relative overflow-hidden">
         {/* Animated Background */}
-        <div className="absolute inset-0 z-0">
-          {/* Large rotating circle - outer energy field */}
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-2xl"
-            style={{
-              background: 'radial-gradient(circle, rgba(74, 222, 128, 0.5) 0%, transparent 70%)',
-            }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
-          />
-
-          {/* Second rotating circle - offset */}
-          <motion.div
-            className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full blur-2xl"
-            style={{
-              background: 'radial-gradient(circle, rgba(96, 165, 250, 0.4) 0%, transparent 70%)',
-            }}
-            animate={{ rotate: -360 }}
-            transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
-          />
-
-          {/* Third subtle circle - float effect */}
-          <motion.div
-            className="absolute bottom-1/4 left-1/3 w-72 h-72 rounded-full blur-2xl"
-            style={{
-              background: 'radial-gradient(circle, rgba(34, 197, 94, 0.4) 0%, transparent 70%)',
-            }}
-            animate={{ y: [0, 20, -20, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-          />
-
-          {/* SVG accent lines - subtle energy flows */}
-          <svg
-            className="absolute inset-0 w-full h-full opacity-20"
-            preserveAspectRatio="xMidYMid slice"
-            viewBox="0 0 1200 800"
-          >
-            <defs>
-              <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#4ade80" />
-                <stop offset="50%" stopColor="#60a5fa" />
-                <stop offset="100%" stopColor="#4ade80" />
-              </linearGradient>
-            </defs>
-
-            {/* Concentric circles representing Earth / energy layers */}
-            <motion.circle
-              cx="600"
-              cy="400"
-              r="200"
-              fill="none"
-              stroke="url(#flowGradient)"
-              strokeWidth="1"
-              animate={{ opacity: [0.2, 0.5, 0.2] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            />
-            <motion.circle
-              cx="600"
-              cy="400"
-              r="260"
-              fill="none"
-              stroke="url(#flowGradient)"
-              strokeWidth="0.5"
-              animate={{ opacity: [0.1, 0.3, 0.1] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
-            />
-            <motion.circle
-              cx="600"
-              cy="400"
-              r="140"
-              fill="none"
-              stroke="url(#flowGradient)"
-              strokeWidth="1"
-              animate={{ opacity: [0.15, 0.4, 0.15] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
-            />
-
-            {/* Subtle energy lines */}
-            <motion.line
-              x1="600"
-              y1="150"
-              x2="600"
-              y2="650"
-              stroke="#60a5fa"
-              strokeWidth="0.5"
-              animate={{ opacity: [0.1, 0.25, 0.1] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            />
-            <motion.line
-              x1="350"
-              y1="400"
-              x2="850"
-              y2="400"
-              stroke="#4ade80"
-              strokeWidth="0.5"
-              animate={{ opacity: [0.08, 0.2, 0.08] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
-            />
-          </svg>
-        </div>
+        {/* Cinematic 3D Background */}
+        <HeroEarth />
 
         {/* Content - positioned relative to sit above background */}
         <div className="max-w-4xl w-full relative z-10">
